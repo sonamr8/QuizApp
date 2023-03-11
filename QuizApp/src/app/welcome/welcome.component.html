@@ -1,0 +1,21 @@
+
+<div class="container bg-light py-5 ">
+    <h1 class="display-5 mt-5 fw-5 text-center"> Welcome to QuizApp</h1>
+    <p class="col-md-8 fs-4 my-3 ">This is a online tests of the candidates coming for interviews </p>
+    <h3 mt-4>Rules For the Test : </h3>
+    <ul >
+        <li>10 points will be awarded for every correct answer</li>
+        <li>5 points will be deducted for every incorrect answer</li>
+        <li>You will be given 30 seconds for each question to answer </li>
+        <li>Refreshing the page will refresh the Quiz</li>
+        <li>Once you answer you can move to next question</li>
+    </ul>
+
+    <h1 class = "fst-italic text-center text-primary m-5"> All The Best !!</h1>
+    <div class="name col-md-4 my-3">
+        <label for="">Enter Your Name:</label>
+        <input #name class="form-control mt-3" type="text" required>  
+        <button class="btn-md btn btn-outline-primary mt-3" routerLink="question" (click)="startQuiz()">Start The Quiz</button>
+    </div>
+
+</div>
