@@ -61,7 +61,7 @@
 <div *ngIf="(resultis)">
     <h3> Congratulations !! You Are Qualified For The Interview</h3>
 </div>
-<div *ngIf="!(resultis)">
+<div *ngIf="!(resultis) && (isQuizCompleted)" >
     <h3> Sorry!! Better luck next time</h3>
 </div>
         </div>    
