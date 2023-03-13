@@ -16,7 +16,9 @@ export class QuestionComponent implements OnInit{
   incorrectAnswer:number=0;
   counter=60;
   interval$:any;
-  progress:string="0"
+  progress:string="0";
+  isQuizCompleted:boolean=false;
+  resultis:boolean= false;
 
  constructor(private questionService :QuestionService){}
 ngOnInit():void{
@@ -31,18 +33,25 @@ getAllQuestions(){this.questionService.getQuestionJson().subscribe(res=>{
 }
 nextQuestion(){
 this.currentQuestion++
+this.resetCounter()
 
 }
 previousQuestion(){
 this.currentQuestion--
+this.resetCounter()
 }
 answer(currentQ:number,option:any){
+  if(currentQ === this.questionList.length){
+    this.isQuizCompleted=true;
+    this.stopCounter()
+  }
   if(option.correct){
     this.points+=10;
     this.currentQuestion++;
     this.correctAnwer++;
     this.resetCounter()
-    this.getProgress();
+    this.getProgress()
+    this.result()
 
   }
   else{
@@ -51,6 +60,7 @@ answer(currentQ:number,option:any){
     this.currentQuestion++;
     this.resetCounter()
     this.getProgress()
+    this.result()
   }
 }
 
@@ -90,4 +100,13 @@ getProgress(){
   this.progress = ((this.currentQuestion/this.questionList.length)*100).toString();
   return this.progress
 }
+result():void {
+  if (this.points >= 60) {
+    this.resultis=true;
+  }   
+ 
 }
+
+
+}
+
