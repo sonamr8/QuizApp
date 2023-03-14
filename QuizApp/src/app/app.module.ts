@@ -7,6 +7,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { QuestionComponent } from './question/question.component';
 import { HeaderComponent } from './header/header.component';
 import {HttpClientModule  } from "@angular/common/http";
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {HttpClientModule  } from "@angular/common/http";
     WelcomeComponent,
     QuestionComponent,
     HeaderComponent,
+    FooterComponent,
     
   ],
   imports: [

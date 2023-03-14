@@ -1,13 +1,13 @@
 <div class="container mt-5">
-    <div class="card">
+    <div class="card mt-5 ">
 <div class="d-flex justify-content-between p-2">
-            <div class="image">
+            <div class="image pt-4">
                 <img src="https://img.icons8.com/color/96/000000/angularjs.png" alt="logo" width="30" height="30">
             </div>
         <div class="quiz-header">
-            <h4 class=" fst-italics">Angular and Typescript Quiz</h4>
+            <h4 class=" p-4 fst-italics">Angular and Typescript Quiz</h4>
             <p>All The Best {{name}}</p>
-<div *ngIf="!(isQuizCompleted)" class="d-flex justify-content-around py-3">
+<div *ngIf="!(isQuizCompleted)" class="d-flex justify-content-around ">
     <div class="score">
         <h5>{{points}} points</h5>
     </div>
@@ -22,14 +22,14 @@
         <div class="progress-bar progress-bar-striped" role="progressbar" aria-label="Default striped example" [ngStyle]="{'width':progress +'%'}" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
 <div  *ngIf="!(isQuizCompleted)"class="question">
-    <div class="card">
+    <div class="">
         <h4>{{questionList[currentQuestion]?.questionText}}</h4>
     </div>
 </div>
 <div *ngIf="!(isQuizCompleted)" class="option">
     <ol *ngFor="let option of questionList[currentQuestion]?.options">
         <li (click)="answer(currentQuestion+1,option)"> 
-            <div class="card">
+            <div class="card ">
             {{option.text}}
             </div>
         </li>
@@ -58,7 +58,7 @@
         </div>
 
 </div>
-<div *ngIf="(resultis)">
+<div *ngIf="(resultis) && (isQuizCompleted)">
     <h3> Congratulations !! You Are Qualified For The Interview</h3>
 </div>
 <div *ngIf="!(resultis) && (isQuizCompleted)" >
